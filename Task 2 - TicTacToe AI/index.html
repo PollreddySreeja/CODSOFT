@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unbeatable Tic-Tac-Toe AI using Minimax with Alpha-Beta Pruning. A CodSoft Internship Project showcasing game theory and search algorithms.">
+    <title>Tic-Tac-Toe AI | Minimax with Alpha-Beta Pruning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Floating Orbs Background -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header" id="header">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M8 8L32 32M32 8L8 32" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="20" cy="20" r="14" stroke="url(#logoGrad2)" stroke-width="2.5" fill="none"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff006e"/>
+                                <stop offset="100%" style="stop-color:#8338ec"/>
+                            </linearGradient>
+                            <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3a86ff"/>
+                                <stop offset="100%" style="stop-color:#00f5d4"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>TIC-TAC-TOE</h1>
+                    <span class="subtitle">AI POWERED • MINIMAX ALGORITHM</span>
+                </div>
+            </div>
+            <div class="header-badge">
+                <span class="badge-dot"></span>
+                <span>CodSoft Internship • Task 2</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Left Panel: Game Controls & Stats -->
+            <aside class="panel panel-left" id="leftPanel">
+                
+                <!-- Difficulty Selector -->
+                <div class="card" id="difficultyCard">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <h3>Difficulty</h3>
+                    </div>
+                    <div class="difficulty-buttons" id="difficultyBtns">
+                        <button class="diff-btn" data-diff="easy" id="btnEasy">
+                            <span class="diff-icon">🌱</span>
+                            <span class="diff-label">Easy</span>
+                            <span class="diff-desc">Random Moves</span>
+                        </button>
+                        <button class="diff-btn" data-diff="medium" id="btnMedium">
+                            <span class="diff-icon">⚡</span>
+                            <span class="diff-label">Medium</span>
+                            <span class="diff-desc">Smart Play</span>
+                        </button>
+                        <button class="diff-btn active" data-diff="impossible" id="btnImpossible">
+                            <span class="diff-icon">🧠</span>
+                            <span class="diff-label">Impossible</span>
+                            <span class="diff-desc">Minimax AI</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Score Card -->
+                <div class="card" id="scoreCard">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 21v-4a4 4 0 014-4h0a4 4 0 014 4v4"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <h3>Scoreboard</h3>
+                    </div>
+                    <div class="score-grid">
+                        <div class="score-item player-score" id="playerScoreItem">
+                            <div class="score-label">YOU (X)</div>
+                            <div class="score-value" id="playerScore">0</div>
+                            <div class="score-bar">
+                                <div class="score-fill player-fill" id="playerFill"></div>
+                            </div>
+                        </div>
+                        <div class="score-item draw-score" id="drawScoreItem">
+                            <div class="score-label">DRAWS</div>
+                            <div class="score-value" id="drawScore">0</div>
+                            <div class="score-bar">
+                                <div class="score-fill draw-fill" id="drawFill"></div>
+                            </div>
+                        </div>
+                        <div class="score-item ai-score" id="aiScoreItem">
+                            <div class="score-label">AI (O)</div>
+                            <div class="score-value" id="aiScore">0</div>
+                            <div class="score-bar">
+                                <div class="score-fill ai-fill" id="aiFill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Symbol Selector -->
+                <div class="card" id="symbolCard">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h8M12 8v8"/>
+                        </svg>
+                        <h3>Play As</h3>
+                    </div>
+                    <div class="symbol-buttons" id="symbolBtns">
+                        <button class="sym-btn active" data-symbol="X" id="btnPlayX">
+                            <svg viewBox="0 0 50 50"><path d="M12 12L38 38M38 12L12 38" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+                            <span>Play as X</span>
+                        </button>
+                        <button class="sym-btn" data-symbol="O" id="btnPlayO">
+                            <svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="14" stroke="currentColor" stroke-width="4" fill="none"/></svg>
+                            <span>Play as O</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center: Game Board -->
+            <section class="game-section" id="gameSection">
+                
+                <!-- Status Bar -->
+                <div class="status-bar" id="statusBar">
+                    <div class="status-indicator" id="statusIndicator"></div>
+                    <span class="status-text" id="statusText">Your turn — tap a cell to play</span>
+                </div>
+
+                <!-- Game Board -->
+                <div class="board-wrapper" id="boardWrapper">
+                    <div class="board-glow" id="boardGlow"></div>
+                    <div class="board" id="gameBoard">
+                        <div class="cell" data-index="0" id="cell0"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="1" id="cell1"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="2" id="cell2"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="3" id="cell3"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="4" id="cell4"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="5" id="cell5"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="6" id="cell6"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="7" id="cell7"><div class="cell-content"></div></div>
+                        <div class="cell" data-index="8" id="cell8"><div class="cell-content"></div></div>
+                    </div>
+                    <!-- Win Line Overlay -->
+                    <svg class="win-line-svg" id="winLineSvg" viewBox="0 0 330 330">
+                        <line id="winLine" x1="0" y1="0" x2="0" y2="0" stroke="url(#winGrad)" stroke-width="4" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="winGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00f5d4"/>
+                                <stop offset="100%" style="stop-color:#ff006e"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons" id="actionButtons">
+                    <button class="btn btn-primary" id="btnNewGame" onclick="game.resetGame()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 4v6h6M23 20v-6h-6"/>
+                            <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/>
+                        </svg>
+                        New Game
+                    </button>
+                    <button class="btn btn-secondary" id="btnResetScore" onclick="game.resetScores()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3 6 5 6 21 6"/>
+                            <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                        </svg>
+                        Reset Scores
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Panel: AI Insights -->
+            <aside class="panel panel-right" id="rightPanel">
+                
+                <!-- AI Thinking Card -->
+                <div class="card ai-brain-card" id="aiBrainCard">
+                    <div class="card-header">
+                        <svg class="card-icon pulse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                        <h3>AI Brain</h3>
+                    </div>
+                    <div class="ai-metrics">
+                        <div class="metric" id="metricNodes">
+                            <span class="metric-value" id="nodesExplored">0</span>
+                            <span class="metric-label">Nodes Explored</span>
+                        </div>
+                        <div class="metric" id="metricPruned">
+                            <span class="metric-value" id="nodesPruned">0</span>
+                            <span class="metric-label">Branches Pruned</span>
+                        </div>
+                        <div class="metric" id="metricDepth">
+                            <span class="metric-value" id="maxDepth">0</span>
+                            <span class="metric-label">Max Depth</span>
+                        </div>
+                        <div class="metric" id="metricTime">
+                            <span class="metric-value" id="thinkTime">0ms</span>
+                            <span class="metric-label">Think Time</span>
+                        </div>
+                    </div>
+                    <div class="ai-eval-bar" id="aiEvalBar">
+                        <div class="eval-label">Board Evaluation</div>
+                        <div class="eval-track">
+                            <div class="eval-fill" id="evalFill" style="width: 50%;"></div>
+                            <div class="eval-marker" id="evalMarker" style="left: 50%;"></div>
+                        </div>
+                        <div class="eval-labels">
+                            <span>Human Favored</span>
+                            <span>AI Favored</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Move History -->
+                <div class="card" id="moveHistoryCard">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <h3>Move History</h3>
+                    </div>
+                    <div class="move-list" id="moveList">
+                        <div class="move-empty">No moves yet — start playing!</div>
+                    </div>
+                </div>
+
+                <!-- Algorithm Info -->
+                <div class="card" id="algoCard">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                        </svg>
+                        <h3>Algorithm</h3>
+                    </div>
+                    <div class="algo-info" id="algoInfo">
+                        <div class="algo-tag" id="algoTag">MINIMAX + α-β PRUNING</div>
+                        <p class="algo-desc">The AI evaluates <strong>every possible</strong> future game state using recursive search. Alpha-Beta Pruning eliminates provably suboptimal branches, reducing computation by up to <strong>60%</strong>.</p>
+                        <div class="algo-complexity">
+                            <span class="complexity-label">Time Complexity:</span>
+                            <span class="complexity-value">O(b<sup>d</sup>) → O(b<sup>d/2</sup>)</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" id="footer">
+            <p>Built with ❤️ using <strong>Minimax Algorithm</strong> with <strong>Alpha-Beta Pruning</strong> | CodSoft AI Internship 2026</p>
+        </footer>
+
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal-overlay" id="gameOverModal">
+        <div class="modal" id="modalContent">
+            <div class="modal-particles" id="modalParticles"></div>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h2 class="modal-title" id="modalTitle">Game Over</h2>
+            <p class="modal-subtitle" id="modalSubtitle">Better luck next time!</p>
+            <div class="modal-stats" id="modalStats">
+                <div class="modal-stat">
+                    <span class="ms-value" id="msMovesPlayed">0</span>
+                    <span class="ms-label">Moves</span>
+                </div>
+                <div class="modal-stat">
+                    <span class="ms-value" id="msTotalNodes">0</span>
+                    <span class="ms-label">AI Nodes</span>
+                </div>
+                <div class="modal-stat">
+                    <span class="ms-value" id="msGameTime">0s</span>
+                    <span class="ms-label">Duration</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary btn-large" id="btnPlayAgain" onclick="game.playAgain()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
