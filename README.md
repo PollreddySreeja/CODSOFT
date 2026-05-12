@@ -58,4 +58,3 @@ This project is part of the CodSoft Virtual Internship Program.
 
 ---
 
-*Made with ❤️ by Sreeja Pollreddy*
