@@ -126,5 +126,3 @@ Task 2 - TicTacToe AI/
 - 🧠 **Impossible Mode** — Full Minimax with Alpha-Beta Pruning, truly unbeatable
 
 ---
-
-Made with ❤️ by **Sreeja Pollreddy** | CodSoft AI Internship 2026
