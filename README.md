@@ -12,10 +12,10 @@
 | # | Task | Status | Tech Stack |
 |---|---|---|---|
 | 1 | [Chatbot with Rule-Based Responses](./Task%201%20-%20Chatbot/) | ✅ Done | Python, Streamlit, Regex |
-| 2 | [Tic-Tac-Toe AI](./Task%202%20-%20TicTacToe%20AI/) | 🔲 Pending | Python, Pygame, Minimax |
-| 3 | [Image Captioning](./Task%203%20-%20Image%20Captioning/) | 🔲 Pending | Python, TensorFlow, VGG16, LSTM |
-| 4 | [Recommendation System](./Task%204%20-%20Recommendation%20System/) | 🔲 Pending | Python, Scikit-learn, Pandas |
-| 5 | [Face Detection & Recognition](./Task%205%20-%20Face%20Detection/) | 🔲 Pending | Python, OpenCV, face_recognition |
+| 2 | [Tic-Tac-Toe AI](./Task%202%20-%20TicTacToe%20AI/) | ✅ Done | Python, Pygame, Minimax |
+| 3 | [Image Captioning](./Task%203%20-%20Image%20Captioning/) | ✅ Done | Python, TensorFlow, ResNet-50, LSTM |
+| 4 | [Recommendation System](./Task%204%20-%20Recommendation%20System/) | ✅ Done | Python, Scikit-learn, Pandas, Streamlit |
+| 5 | [Face Detection & Recognition](./Task%205%20-%20Face%20Detection/) | ✅ Done | Python, OpenCV, MediaPipe, DeepFace, ArcFace |
 
 ---
 
@@ -26,7 +26,7 @@ Each task folder contains its own `README.md` with setup and run instructions.
 General steps:
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/CODSOFT.git
+git clone https://github.com/PollreddySreeja/CODSOFT.git
 cd CODSOFT
 
 # Navigate to a task folder
