@@ -8,3 +8,10 @@ dist/
 build/
 .DS_Store
 Thumbs.db
+
+# Task 5 - Face Detection
+models/
+.temp/
+database/
+*.pkl
+ds_model_*
