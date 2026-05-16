@@ -125,3 +125,9 @@ Task 2 - TicTacToe AI/
 - 🧠 **Impossible Mode** — Full Minimax with Alpha-Beta Pruning, truly unbeatable
 
 ---
+
+## 📜 License
+
+Part of the CodSoft AI Virtual Internship Program.
+
+---
