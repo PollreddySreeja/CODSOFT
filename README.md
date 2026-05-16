@@ -43,12 +43,17 @@ streamlit run app.py
 
 ## 🛠️ Tech Stack Overview
 
-- **Python 3.9+**
+- **Python 3.10+** — Core language
 - **Streamlit** — Interactive web UIs
-- **Scikit-learn** — ML algorithms
-- **TensorFlow / Keras** — Deep Learning
-- **OpenCV** — Computer Vision
-- **Pygame** — Game development
+- **TensorFlow / Keras** — Deep learning (Image Captioning, Face Recognition)
+- **OpenCV** — Computer vision & face detection (Haar, DNN SSD)
+- **MediaPipe** — Face mesh & landmark detection
+- **DeepFace (ArcFace)** — Face recognition & verification
+- **Scikit-learn** — ML algorithms (Recommendation System)
+- **Pandas / NumPy** — Data processing & analysis
+- **Plotly** — Interactive data visualizations
+- **Pygame** — Game development (Tic-Tac-Toe)
+- **Regex / NLP** — Pattern matching (Chatbot)
 
 ---
 
