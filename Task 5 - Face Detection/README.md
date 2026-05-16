@@ -1,8 +1,6 @@
-# 🎮 Task 2 — Tic-Tac-Toe AI
+# Task 5 — 🎭 FaceVision AI — Face Detection & Recognition System
 
-# 🎭 FaceVision AI — Face Detection & Recognition System
-> **CodSoft AI Internship** · Artificial Intelligence  
-> Intern: **Sreeja Pollreddy** · ID: BY25RY287818
+> **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
 A comprehensive AI-powered face detection and recognition application built with Python. It leverages multiple detection backends (Haar Cascades, OpenCV DNN, MediaPipe), **ArcFace** embeddings for recognition, and **DeepFace** for facial attribute analysis — all wrapped in a polished Streamlit interface.
 
