@@ -1,6 +1,5 @@
 # Image Captioning using Deep Learning
 
-> **CodSoft AI Internship — Task 3**
 > **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
 This project builds an image captioning system that takes an image as input and generates a natural language description of what's happening in it. It combines computer vision (CNN) for understanding the image with NLP (RNN) for generating the text.
