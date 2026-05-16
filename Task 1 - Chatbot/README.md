@@ -120,16 +120,8 @@ User Input → Lowercase → Regex Match → Select Random Response → Process 
 
 ---
 
-## 📸 Screenshots
-
-*Screenshots will be added after running the application.*
-
----
-
 ## 📜 License
 
 Part of the CodSoft AI Virtual Internship Program.
 
 ---
-
-*Made with ❤️ by Sreeja Pollreddy — CodSoft 2026*

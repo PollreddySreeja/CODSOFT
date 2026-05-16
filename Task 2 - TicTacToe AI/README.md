@@ -1,7 +1,6 @@
 # 🎮 Task 2 — Tic-Tac-Toe AI
 
-> **CodSoft AI Internship** · Artificial Intelligence  
-> Intern: **Sreeja Pollreddy** · ID: BY25RY287818
+> **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
 An unbeatable Tic-Tac-Toe AI agent that plays against a human player using the **Minimax algorithm with Alpha-Beta Pruning**. The project demonstrates core concepts in game theory, adversarial search, and optimal decision-making.
 
@@ -127,4 +126,8 @@ Task 2 - TicTacToe AI/
 
 ---
 
-Made with ❤️ by **Sreeja Pollreddy** | CodSoft AI Internship 2026
+## 📜 License
+
+Part of the CodSoft AI Virtual Internship Program.
+
+---

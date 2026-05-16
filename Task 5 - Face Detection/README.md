@@ -1,4 +1,6 @@
-# 🎭 FaceVision AI — Face Detection & Recognition System
+# Task 5 — 🎭 FaceVision AI — Face Detection & Recognition System
+
+> **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
 A comprehensive AI-powered face detection and recognition application built with Python. It leverages multiple detection backends (Haar Cascades, OpenCV DNN, MediaPipe), **ArcFace** embeddings for recognition, and **DeepFace** for facial attribute analysis — all wrapped in a polished Streamlit interface.
 
@@ -114,6 +116,8 @@ The app opens at `http://localhost:8501`.
 
 ---
 
-## 📝 License
+## 📜 License
 
-This project is developed for educational and internship evaluation purposes.
+Part of the CodSoft AI Virtual Internship Program.
+
+---

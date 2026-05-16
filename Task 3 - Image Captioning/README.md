@@ -1,8 +1,16 @@
-# Image Captioning using Deep Learning
+# Task 3 — Image Captioning using Deep Learning
 
-**CodSoft AI Internship — Task 3**
+> **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
 This project builds an image captioning system that takes an image as input and generates a natural language description of what's happening in it. It combines computer vision (CNN) for understanding the image with NLP (RNN) for generating the text.
+
+## Tech Stack
+
+- PyTorch, torchvision
+- HuggingFace Transformers (for BLIP)
+- Streamlit
+- NLTK (for BLEU scores)
+- Matplotlib (for attention visualizations)
 
 ## How it Works
 
@@ -77,10 +85,9 @@ Trained on [Flickr8k](https://www.kaggle.com/datasets/adityajn105/flickr8k) — 
 - He et al., "Deep Residual Learning" (2016) — ResNet architecture
 - Li et al., "BLIP" (2022) — used for the pre-trained comparison model
 
-## Tech Stack
 
-- PyTorch, torchvision
-- HuggingFace Transformers (for BLIP)
-- Streamlit
-- NLTK (for BLEU scores)
-- Matplotlib (for attention visualizations)
+## 📜 License
+
+Part of the CodSoft AI Virtual Internship Program.
+
+---
