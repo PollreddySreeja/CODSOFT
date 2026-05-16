@@ -1,4 +1,4 @@
-# Image Captioning using Deep Learning
+Task 3 — Image Captioning using Deep Learning
 
 > **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
