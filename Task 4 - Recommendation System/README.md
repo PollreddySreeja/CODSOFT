@@ -1,6 +1,6 @@
 # 🎬 CineMatch — Hybrid Movie Recommendation System
 
-**CodSoft AI Internship — Task 4**
+> **CodSoft AI Internship | Sreeja Pollreddy | BY25RY287818**
 
 A smart movie recommendation engine that combines **Content-Based Filtering** and **Collaborative Filtering** into an explainable hybrid system. Built as part of the **CodSoft AI Internship — Task 4**.
 
