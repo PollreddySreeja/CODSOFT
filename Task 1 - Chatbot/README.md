@@ -131,5 +131,3 @@ User Input → Lowercase → Regex Match → Select Random Response → Process 
 Part of the CodSoft AI Virtual Internship Program.
 
 ---
-
-*Made with ❤️ by Sreeja Pollreddy — CodSoft 2026*
