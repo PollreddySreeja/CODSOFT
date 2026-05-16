@@ -45,6 +45,15 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+## 🛠️ Tech Stack
+
+- **Python 3.10+**
+- **Streamlit** — interactive web UI
+- **scikit-learn** — TF-IDF, cosine similarity
+- **SciPy** — truncated SVD
+- **Plotly** — interactive charts
+- **Pandas / NumPy** — data processing
+  
 ## 🧠 Algorithms
 
 ### Content-Based Filtering
@@ -68,11 +77,4 @@ streamlit run app.py
 
 The system reports **RMSE**, **MAE**, and test sample count on the Analytics tab, computed via a 20% held-out evaluation split from the collaborative filtering model.
 
-## 🛠️ Tech Stack
 
-- **Python 3.10+**
-- **Streamlit** — interactive web UI
-- **scikit-learn** — TF-IDF, cosine similarity
-- **SciPy** — truncated SVD
-- **Plotly** — interactive charts
-- **Pandas / NumPy** — data processing
