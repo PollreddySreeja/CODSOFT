@@ -116,6 +116,8 @@ The app opens at `http://localhost:8501`.
 
 ---
 
-## 📝 License
+## 📜 License
 
-This project is developed for educational and internship evaluation purposes.
+Part of the CodSoft AI Virtual Internship Program.
+
+---
