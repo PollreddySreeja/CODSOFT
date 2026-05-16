@@ -5,7 +5,15 @@
 A smart movie recommendation engine that combines **Content-Based Filtering** and **Collaborative Filtering** into an explainable hybrid system. Built as part of the **CodSoft AI Internship — Task 4**.
 
 ---
+## 🛠️ Tech Stack
 
+- **Python 3.10+**
+- **Streamlit** — interactive web UI
+- **scikit-learn** — TF-IDF, cosine similarity
+- **SciPy** — truncated SVD
+- **Plotly** — interactive charts
+- **Pandas / NumPy** — data processing
+  
 ## ✨ Features
 
 | Feature | Description |
@@ -44,15 +52,6 @@ pip install -r requirements.txt
 # 2. Run the app
 streamlit run app.py
 ```
-
-## 🛠️ Tech Stack
-
-- **Python 3.10+**
-- **Streamlit** — interactive web UI
-- **scikit-learn** — TF-IDF, cosine similarity
-- **SciPy** — truncated SVD
-- **Plotly** — interactive charts
-- **Pandas / NumPy** — data processing
   
 ## 🧠 Algorithms
 
@@ -76,5 +75,11 @@ streamlit run app.py
 ## 📊 Evaluation Metrics
 
 The system reports **RMSE**, **MAE**, and test sample count on the Analytics tab, computed via a 20% held-out evaluation split from the collaborative filtering model.
+
+## 📜 License
+
+Part of the CodSoft AI Virtual Internship Program.
+
+---
 
 
